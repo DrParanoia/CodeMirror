@@ -138,6 +138,8 @@ export function defineOptions(CodeMirror) {
   option("cursorScrollMargin", 0)
   option("cursorHeight", 1, updateSelection, true)
   option("singleCursorHeightPerLine", true, updateSelection, true)
+  option("reHighlightOnChange", false)
+  option("maxHighlightDelay", false)
   option("workTime", 100)
   option("workDelay", 100)
   option("flattenSpans", true, resetModeState, true)

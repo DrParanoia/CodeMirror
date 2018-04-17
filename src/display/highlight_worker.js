@@ -8,6 +8,14 @@ import { regLineChange } from "./view_tracking.js"
 // HIGHLIGHT WORKER
 
 export function startWorker(cm, time) {
+  if (cm.getOption("reHighlightOnChange"))
+      cm.doc.modeFrontier = cm.doc.highlightFrontier = cm.doc.first
+
+  let maxHighlightDelay = cm.getOption("maxHighlightDelay")
+  if (maxHighlightDelay !== false)
+    if (time > maxHighlightDelay)
+      time = maxHighlightDelay
+
   if (cm.doc.highlightFrontier < cm.display.viewTo)
     cm.state.highlight.set(time, bind(highlightWorker, cm))
 }
