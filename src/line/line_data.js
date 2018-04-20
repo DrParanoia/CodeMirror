@@ -157,7 +157,8 @@ function buildToken(builder, text, style, startStyle, endStyle, title, css) {
       pos += skipped + 1
       let txt
       if (m[0] == "\t") {
-        let tabSize = builder.cm.options.tabSize, tabWidth = tabSize - builder.col % tabSize
+        let tabSize = builder.cm.options.tabSize
+        let tabWidth = builder.cm.options.tabWidth === false ? tabSize - builder.col % tabSize : builder.cm.options.tabWidth
         txt = content.appendChild(elt("span", spaceStr(tabWidth), "cm-tab"))
         txt.setAttribute("role", "presentation")
         txt.setAttribute("cm-text", "\t")
