@@ -303,13 +303,24 @@ Doc.prototype = createObj(BranchChunk.prototype, {
     pos = clipPos(this, pos)
     return markText(this, pos, pos, realOpts, "bookmark")
   },
+  findMarkedSpansAt: function(pos) {
+    pos = clipPos(this, pos)
+    let returnedSpans = [], spans = getLine(this, pos.line).markedSpans
+    if (spans) for (let i = 0; i < spans.length; ++i) {
+      let span = spans[i]
+      if ((span.from == null || span.from <= pos.ch) &&
+          (span.to == null || span.to > pos.ch))
+        returnedSpans.push(span)
+    }
+    return returnedSpans
+  },
   findMarksAt: function(pos) {
     pos = clipPos(this, pos)
     let markers = [], spans = getLine(this, pos.line).markedSpans
     if (spans) for (let i = 0; i < spans.length; ++i) {
       let span = spans[i]
       if ((span.from == null || span.from <= pos.ch) &&
-          (span.to == null || span.to >= pos.ch))
+          (span.to == null || span.to > pos.ch))
         markers.push(span.marker.parent || span.marker)
     }
     return markers
