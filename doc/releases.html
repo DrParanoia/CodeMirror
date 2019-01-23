@@ -30,6 +30,52 @@
 
   <h2>Version 5.x</h2>
 
+  <p class="rel">21-01-2019: <a href="https://codemirror.net/codemirror-5.43.0.zip">Version 5.43.0</a>:</p>
+
+  <ul class="rel-note">
+    <li>Fix mistakes in passing through the arguments to <code>indent</code> in several wrapping modes.</li>
+    <li><a href="https://codemirror.net/mode/javascript/">javascript mode</a>: Fix parsing for a number of new and obscure TypeScript features.</li>
+    <li><a href="https://codemirror.net/mode/ruby">ruby mode</a>: Support indented end tokens for heredoc strings.</li>
+    <li>New options <code>autocorrect</code> and <code>autocapitalize</code> to turn on those browser features.</li>
+  </ul>
+
+  <p class="rel">21-12-2018: <a href="https://codemirror.net/codemirror-5.42.2.zip">Version 5.42.2</a>:</p>
+
+  <ul class="rel-note">
+    <li>Fix problem where canceling a change via the <code>&quot;beforeChange&quot;</code> event could corrupt the textarea input.</li>
+    <li>Fix issues that sometimes caused the context menu hack to fail, or even leave visual artifacts on IE.</li>
+    <li><a href="https://codemirror.net/demo/vim.html">vim bindings</a>: Make it possible to select text between angle brackets.</li>
+    <li><a href="https://codemirror.net/mode/css/">css mode</a>: Fix tokenizing of CSS variables.</li>
+    <li><a href="https://codemirror.net/mode/python/">python mode</a>: Fix another bug in tokenizing of format strings.</li>
+    <li><a href="https://codemirror.net/mode/soy/">soy mode</a>: More accurate highlighting.</li>
+  </ul>
+
+  <p class="rel">20-11-2018: <a href="https://codemirror.net/codemirror-5.42.0.zip">Version 5.42.0</a>:</p>
+
+  <ul class="rel-note">
+    <li>The <a href="https://codemirror.net/doc/manual.html#markText"><code>markText</code> method</a> now takes an <a href="https://codemirror.net/doc/manual.html#mark_attributes"><code>attributes</code></a> option that can be used to add attributes text's HTML representation.</li>
+    <li><a href="https://codemirror.net/demo/vim.html">vim bindings</a>: Add support for the <code>=</code> binding.</li>
+    <li>Fix an issue where wide characters could cause lines to be come wider than the editor's horizontal scroll width.</li>
+    <li>Optimize handling of window resize events.</li>
+    <li><a href="https://codemirror.net/doc/manual.html#addon_show-hint">show-hint addon</a>: Don't assume the hints are shown in the same document the library was loaded in.</li>
+    <li><a href="https://codemirror.net/mode/python/">python mode</a>: Fix bug where a string inside a template string broke highlighting.</li>
+    <li><a href="https://codemirror.net/mode/swift">swift mode</a>: Support multi-line strings.</li>
+  </ul>
+
+  <p class="rel">25-10-2018: <a href="https://codemirror.net/codemirror-5.41.0.zip">Version 5.41.0</a>:</p>
+
+  <ul class="rel-note">
+    <li>A new <a href="https://codemirror.net/doc/manual.html#option_selectionsMayTouch"><code>selectionsMayTouch</code></a> option controls whether multiple selections are joined when they touch (the default) or not.</li>
+    <li><a href="https://codemirror.net/demo/vim.html">vim bindings</a>: Add <code>noremap</code> binding command.</li>
+    <li>Fix firing of <a href="https://codemirror.net/doc/manual.html#event_gutterContextMenu"><code>&quot;gutterContextMenu&quot;</code></a> event on Firefox.</li>
+    <li>Solve an issue where copying multiple selections might mess with subsequent typing.</li>
+    <li>Don't crash when <a href="https://codemirror.net/doc/manual.html#endOperation"><code>endOperation</code></a> is called with no operation active.</li>
+    <li><a href="https://codemirror.net/demo/vim.html">vim bindings</a>: Fix insert mode repeat after visualBlock edits.</li>
+    <li><a href="https://codemirror.net/mode/scheme/index.html">scheme mode</a>: Improve highlighting of quoted expressions.</li>
+    <li><a href="https://codemirror.net/mode/soy/">soy mode</a>: Support injected data and <code>@param</code> in comments.</li>
+    <li><a href="https://codemirror.net/mode/clike/">objective c mode</a>: Improve conformance to the actual language.</li>
+  </ul>
+
   <p class="rel">20-09-2018: <a href="https://codemirror.net/codemirror-5.40.2.zip">Version 5.40.2</a>:</p>
 
   <ul class="rel-note">
